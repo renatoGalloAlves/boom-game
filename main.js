@@ -2,28 +2,41 @@
 // [FEITO] adicionar o balão no container
 // [FEITO] determinar um intervalo de tempo para adicionar os baloes sequencialmente
 
-const containerBaloes = document.querySelector(".container-baloes");
+const buttonIniciarGame = document.querySelector(".btn-iniciar-game");
 
-function adicionarBalao() {
-  const elementoImg = document.createElement("img");
+buttonIniciarGame.addEventListener("click", function () {
+  buttonIniciarGame.remove();
+  iniciarGame();
+});
 
-  elementoImg.setAttribute("src", "./assets/baloon.png");
-  elementoImg.setAttribute("class", "balao");
-
-  const valorLeft = Math.round(Math.random() * 90);
-  const valorTop = Math.round(Math.random() * 90);
-
-  elementoImg.style.left = valorLeft + "vw";
-  elementoImg.style.top = valorTop + "vh";
-
-  console.log("left=>", valorLeft);
-  console.log("Top=>", valorTop);
-
-  containerBaloes.appendChild(elementoImg);
-
-  console.log("Elemento Img =>", elementoImg);
+function iniciarGame() {
+  setInterval(adicionarBalao, 1500);
 }
 
-setInterval(adicionarBalao, 3000); //3000 milesegundos = 3 segundos
+const balloonsContainer = document.querySelector(".container-balao");
 
-// adicionarBalao();
+function adicionarBalao() {
+  const elementImg = document.createElement("img");
+
+  elementImg.setAttribute("src", "./assets/baloon.png");
+  elementImg.setAttribute("class", "balao");
+
+  const positionLeft = Math.round(Math.random() * 90);
+  const positionTop = Math.round(Math.random() * 90);
+
+  elementImg.style.left = positionLeft + "vw";
+  elementImg.style.top = positionTop + "vh";
+
+  elementImg.addEventListener("click", function () {
+    removeBalao(this);
+  });
+
+  balloonsContainer.appendChild(elementImg);
+}
+
+function removeBalao(element) {
+  const boomSound = new Audio("./assets/boom.mpeg");
+  boomSound.play();
+  boomSound.volume = 0.1;
+  element.remove();
+}

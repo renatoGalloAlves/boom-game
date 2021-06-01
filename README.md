@@ -1,0 +1,1 @@
+Adicione a funcionalidade de remover um balão quando ele for clicado no jogo BOOM!

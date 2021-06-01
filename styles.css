@@ -3,19 +3,73 @@
   padding: 0;
 }
 
-html,
 body {
-  height: 100%;
-  width: 100%;
+  background-color: #E3EEF2;
+  font-family: "Montserrat";
 }
 
-.container-baloes {
-  height: 100%;
+header {
+  display: flex;
   width: 100%;
-  background-color: #161616;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 0;
+}
+
+.titulo{
+  width: 600;
+}
+
+.titulo,
+.descricao {
+  color:#0bab50;
+  font-size: 40px;
+  text-align: center;
+  width: 400;
+}
+
+
+@keyframes animationButton {
+  0% {
+    width: 200px;
+    height: 50px;
+  }
+  50% {
+    width: 220px;
+    height: 55px;
+  }
+  100% {
+    width: 200px;
+    height: 50px;
+  }
+}
+
+.btn-iniciar-game {
+  z-index: 2;
+  margin-top: 15px;
+  width: 200px;
+  height: 50px;
+  font-size: 18px;
+  background-color: #0bab50;
+  color: #E3EEF2;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 22px;
+  animation: 1s ease-in-out infinite animationButton;
+}
+
+.container-balao {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
 }
 
 .balao {
-  width: 80px;
+  width: 120px;
+  height: auto;
+  cursor: url("./assets/alfinete.png"), auto;
   position: absolute;
 }
