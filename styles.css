@@ -45,18 +45,18 @@ header {
   }
 }
 
-.btn-iniciar-game {
+.botaoIniciar {
   z-index: 2;
   margin-top: 15px;
-  width: 200px;
+  width: 250px;
   height: 50px;
-  font-size: 18px;
+  font-size: 25px;
   background-color: #0bab50;
   color: #E3EEF2;
   cursor: pointer;
   border: none;
   outline: none;
-  border-radius: 22px;
+  border-radius: 25px;
   animation: 1s ease-in-out infinite animationButton;
 }
 
