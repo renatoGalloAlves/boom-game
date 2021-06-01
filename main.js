@@ -3,9 +3,11 @@
 // [FEITO] determinar um intervalo de tempo para adicionar os baloes sequencialmente
 
 const buttonIniciarGame = document.querySelector(".botaoIniciar");
+const titulo = document.querySelector("header")
 
 buttonIniciarGame.addEventListener("click", function () {
   buttonIniciarGame.remove();
+  titulo.remove();
   iniciarGame();
 });
 
