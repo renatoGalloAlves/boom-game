@@ -35,7 +35,7 @@ function adicionarBalao() {
 }
 
 function removeBalao(element) {
-  const boomSound = new Audio("./assets/baloon.png");
+  const boomSound = new Audio("./assets/boom.mpeg");
   boomSound.play();
   boomSound.volume = 0.1;
   element.remove();
