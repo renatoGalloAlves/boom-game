@@ -2,7 +2,7 @@
 // [FEITO] adicionar o balão no container
 // [FEITO] determinar um intervalo de tempo para adicionar os baloes sequencialmente
 
-const buttonIniciarGame = document.querySelector(".btn-iniciar-game");
+const buttonIniciarGame = document.querySelector(".botaoIniciar");
 
 buttonIniciarGame.addEventListener("click", function () {
   buttonIniciarGame.remove();
@@ -35,7 +35,7 @@ function adicionarBalao() {
 }
 
 function removeBalao(element) {
-  const boomSound = new Audio("./assets/boom.mpeg");
+  const boomSound = new Audio("./assets/baloon.png");
   boomSound.play();
   boomSound.volume = 0.1;
   element.remove();
